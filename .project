@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>auv1</name>
+=======
+	<name>auv</name>
+>>>>>>> a77da31a94716530a4892b19b5d0a66c9cd1352f
 	<comment></comment>
 	<projects>
 	</projects>

@@ -96,6 +96,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     /* Peripheral clock enable */
     __HAL_RCC_ADC1_CLK_ENABLE();
 
+<<<<<<< HEAD
     __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -120,6 +121,16 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+=======
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    /**ADC1 GPIO Configuration
+    PA0-WKUP     ------> ADC1_IN0
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+>>>>>>> a77da31a94716530a4892b19b5d0a66c9cd1352f
 
     /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -146,6 +157,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     __HAL_RCC_ADC1_CLK_DISABLE();
 
     /**ADC1 GPIO Configuration
+<<<<<<< HEAD
     PC0     ------> ADC1_IN10
     PC1     ------> ADC1_IN11
     PA0-WKUP     ------> ADC1_IN0
@@ -157,6 +169,11 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1);
 
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_0);
+=======
+    PA0-WKUP     ------> ADC1_IN0
+    */
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0);
+>>>>>>> a77da31a94716530a4892b19b5d0a66c9cd1352f
 
     /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
@@ -200,7 +217,11 @@ void HAL_DAC_MspInit(DAC_HandleTypeDef* hdac)
     hdma_dac1.Init.MemInc = DMA_MINC_ENABLE;
     hdma_dac1.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     hdma_dac1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+<<<<<<< HEAD
     hdma_dac1.Init.Mode = DMA_NORMAL;
+=======
+    hdma_dac1.Init.Mode = DMA_CIRCULAR;
+>>>>>>> a77da31a94716530a4892b19b5d0a66c9cd1352f
     hdma_dac1.Init.Priority = DMA_PRIORITY_HIGH;
     hdma_dac1.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     if (HAL_DMA_Init(&hdma_dac1) != HAL_OK)
@@ -293,6 +314,7 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 
 }
 
+<<<<<<< HEAD
 /**
   * @brief UART MSP Initialization
   * This function configures the hardware resources used in this example
@@ -359,6 +381,8 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 
 }
 
+=======
+>>>>>>> a77da31a94716530a4892b19b5d0a66c9cd1352f
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
