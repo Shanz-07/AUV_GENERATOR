@@ -59,12 +59,12 @@ The hardware frequency mapping is:
 
 f_hw = 20 kHz + 0.075 × (f_model − 100 kHz)
 
-The centre frequency and FM sweep bandwidth are scaled by 7.5%. This MVP therefore does not demonstrate full-band 100–500 kHz transmission, and pulse-compression performance is limited by the reduced sweep bandwidth.
+The centre frequency and FM sweep bandwidth are scaled by 7.5%. This MVP does not demonstrate full-band 100–500 kHz transmission, and pulse-compression performance is limited by the reduced sweep bandwidth.
 
 Firmware and Python Analysis
 
 - Normal telemetry: Use "Core/Src/main.c" for readable UART output in PuTTY.
-- Waveform analysis: "main_py.c" supports text telemetry and optional DAC-frame streaming. Set "DAC_STREAM_ENABLE" to "1" at the top of the firmware to enable streaming; binary frames appear as garbage in a serial terminal, so disable streaming for normal telemetry.
+- Waveform analysis: "main_py.c" supports text telemetry and optional DAC-frame streaming. Set "DAC_STREAM_ENABLE" to "1" at the top of the firmware to enable streaming. Binary frames appear as garbage in a serial terminal, so disable streaming for normal telemetry.
 
 Install Python dependencies from "requirements.txt", then run:
 
